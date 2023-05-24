@@ -1,46 +1,45 @@
-import React, {useContext, useEffect} from "react"; //importar HOOK useContext
+import React, { useContext, useEffect } from "react"; //importar HOOK useContext
 import { Context } from "../store/appContext"; //importar Context
 import "../../styles/home.css";
 import { CharactersCard } from "../component/charactersCard.js";
+import { PlanetsCard } from "../component/planetsCard.js";
 
 export const Home = () => {
+  //!!debo llamar el array de objetos de characters "store.characters"
 
-	//!!debo llamar el array de objetos de characters "store.characters"
-	
-	const {store,actions} = useContext(Context); //consumir el contexto
+  const { store, actions } = useContext(Context); //consumir el contexto
 
-	useEffect (() => {
-		actions.fetchCharacters();
-    }, []);
+  useEffect(() => {
+    actions.fetchCharacters();
+  }, []);
 
-	return( 
-		<div className="container">
-			<div className="row flex-nowrap">
-				<h1 className="h1">Characters</h1>
-				<div id="card-view" className="d-flex overflow-auto">
-					{/* aquí corresponde el mapeado de store.character para
+  useEffect(() => {
+    actions.fetchPlanets();
+  }, []);
+
+  return (
+    <div className="body container-fluid">
+      <h1 className="h1">Characters</h1>
+      <div className="d-flex flex-row flex-nowrap">
+        <div id="card-view" className="d-flex overflow-auto custom-scroll">
+          {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
-					{store.characters?.map((character) => (
-						<CharactersCard 
-						character={character}
-						// key={character.id} character={character}
-						 />
-					))}
-				</div>
-			</div>
-		</div>
-	);
+          {store.characters?.map((character) => (
+            <CharactersCard character={character} key={character.uid} />
+          ))}
+        </div>
+      </div>
+      <h1 className="h1">Planets</h1>
+      <div className="d-flex flex-row flex-nowrap">
+        <div id="card-view" className="d-flex overflow-auto custom-scroll">
+          {store.planets?.map((planet) => (
+            <PlanetsCard planet={planet} key={planet.uid} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import rigoImage from "../../img/rigo-baby.jpg";

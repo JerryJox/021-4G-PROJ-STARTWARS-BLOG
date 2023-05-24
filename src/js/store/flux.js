@@ -1,21 +1,21 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-
-			characters: null
-			// ,
-			// planets: []
-			
+			characters: null,
+			planets: null
 		},
 		actions: {
-
 			fetchCharacters: () =>{ 
 				fetch("https://www.swapi.tech/api/people/")
 				.then(res => res.json())
 				.then(data => setStore({characters: data.results }))
 				.then(error => console.log(error));
-
 		},
+			fetchPlanets: () =>{ 
+				fetch("https://www.swapi.tech/api/planets/")
+				.then(res => res.json())
+				.then(data => setStore({planets: data.results }))
+				.then(error => console.log(error));
 
 		// store: {
 		// 	demo: [
@@ -54,7 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		// 		//reset the global store
 		// 		setStore({ demo: demo });
-		// 	}
+			}
 		}
 	}
 };
