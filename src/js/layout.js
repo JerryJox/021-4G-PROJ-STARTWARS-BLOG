@@ -4,8 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { SingleChaCard } from "./component/singleChaCard";
-// import { Single } from "./views/single";
+// import { Single } from "./component/single.js";
+import { CharDetails } from "./views/charDetails";
+import { PlaDetails } from "./views/plaDetails";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -24,7 +25,8 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/single/:theid" element={<SingleChaCard />} />
+						<Route path="/char-details/:theid" element={<CharDetails />} />
+						<Route path="/pla-details/:theid" element={<PlaDetails />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

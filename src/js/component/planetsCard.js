@@ -20,7 +20,7 @@ export const PlanetsCard = (props) => { //aquí recibo las propiedades a través
                     <p className="card-text">Terrain: {props.planet.terrain}</p>
                 </div>
                 <div className="d-flex justify-content-between">
-                <Link to={"/single/"+props.planet?.uid} className="btn-More btn btn-primary">Learn more!</Link>
+                <Link to={"/pla-details/"+props.planet?.uid} className="btn-More btn btn-primary">Learn more!</Link>
                 <button type="button" className="btn-Favorite btn btn-warning">Favorite</button>
                 </div>
             </div>

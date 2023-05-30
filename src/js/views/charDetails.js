@@ -4,22 +4,23 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { SingleChaCard } from "../component/singleChaCard";
 
-export const Single = props => {
+export const CharDetails = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="body jumbotron">
+		<div className="body container-fluid">
 			{/* <h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1> */}
 			<SingleChaCard/>
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
 				</span>
+				
 			</Link>
 		</div>
 	);
 };
 
-Single.propTypes = {
+CharDetails.propTypes = {
 	match: PropTypes.object
 };

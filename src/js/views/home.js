@@ -24,8 +24,8 @@ export const Home = () => {
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
           {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
-          {store.characters?.map((character) => (
-            <CharactersCard character={character} key={character.uid} />
+          {store.characters?.map((character,index) => (
+            <CharactersCard character={character} key={index} uid={index+1}/>
           ))}
         </div>
       </div>

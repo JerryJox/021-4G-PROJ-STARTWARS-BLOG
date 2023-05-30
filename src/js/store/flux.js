@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			fetchCharacters: () =>{ 
-				fetch("https://www.swapi.tech/api/people/")
+				fetch("https://swapi.dev/api/people/")
 				.then(res => res.json())
 				.then(data => setStore({characters: data.results }))
 				.then(error => console.log(error));
