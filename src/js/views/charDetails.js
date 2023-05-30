@@ -10,12 +10,11 @@ export const CharDetails = props => {
 	return (
 		<div className="body container-fluid">
 			{/* <h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1> */}
-			<SingleChaCard/>
+			<SingleChaCard />
 			<Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back home
 				</span>
-				
 			</Link>
 		</div>
 	);

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export const CardPlanets = (props) => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
-  console.log(props.planet)
+//   console.log(props.planet)
     return(
         <div className="card card-view">
             <div>
