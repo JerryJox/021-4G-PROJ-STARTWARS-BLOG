@@ -1,13 +1,11 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-// import {faHeart} from ""
-// aqui estoy declarando el componente
 
-export const CharactersCard = (props) => { //aquí recibo las propiedades a través del objeto .props
+export const CardCharacters = (props) => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
-  console.log(props.character)
+//   console.log(props.character)
     return(
         <div className="card card-view">
             <div>

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from "react"; //importar HOOK useContext
 import { Context } from "../store/appContext"; //importar Context
 import "../../styles/home.css";
-import { CharactersCard } from "../component/charactersCard.js";
-import { PlanetsCard } from "../component/planetsCard.js";
+import { CardCharacters } from "../component/cardCharacters.js";
+import { CardPlanets } from "../component/cardPlanets.js";
+import { CardStarships } from "../component/cardStarships";
 
 export const Home = () => {
   //!!debo llamar el array de objetos de characters "store.characters"
@@ -17,6 +18,10 @@ export const Home = () => {
     actions.fetchPlanets();
   }, []);
 
+  useEffect(() => {
+    actions.fetchStarships();
+  }, []);
+
   return (
     <div className="body container-fluid">
       <h1 className="h1">Characters</h1>
@@ -25,7 +30,7 @@ export const Home = () => {
           {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
           {store.characters?.map((character,index) => (
-            <CharactersCard character={character} key={index} uid={index+1}/>
+            <CardCharacters character={character} key={index} uid={index+1}/>
           ))}
         </div>
       </div>
@@ -33,7 +38,17 @@ export const Home = () => {
       <div className="d-flex flex-row flex-nowrap">
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
           {store.planets?.map((planet) => (
-            <PlanetsCard planet={planet} key={planet.uid} />
+            <CardPlanets planet={planet} key={planet.uid} />
+          ))}
+        </div>
+      </div>
+      <h1 className="h1">Starships</h1>
+      <div className="d-flex flex-row flex-nowrap">
+        <div id="card-view" className="d-flex overflow-auto custom-scroll">
+          {/* aquí corresponde el mapeado de store.character para
+							que me dibuje una card cada vez que itere */}
+          {store.starships?.map((starship,index) => (
+            <CardStarships starship={starship} key={starship.uid} />
           ))}
         </div>
       </div>

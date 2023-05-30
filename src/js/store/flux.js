@@ -2,9 +2,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters: null,
-			planets: null
+			planets: null,
+			starships: null
 		},
 		actions: {
+			fetchStarships: () =>{ 
+				fetch("https://www.swapi.tech/api/starships/")
+				.then(res => res.json())
+				.then(data => setStore({starships: data.results }))
+				.then(error => console.log(error));
+		},
 			fetchCharacters: () =>{ 
 				fetch("https://swapi.dev/api/people/")
 				.then(res => res.json())

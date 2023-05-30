@@ -58,13 +58,48 @@
   background-color: blue; /* color del pulgar de la barra de desplazamiento al pasar el mouse */
 }
 
-.single-card-view {
+.bodySimpleCard {
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  background-color: yellow;
+  width: 1000px;
+}
+
+.imgBox {
+  margin-left: 40px;
+  background-color: black;  
+  border-radius: 20px;
+  height: 400px;
+}
+
+.textBox {
+  margin: 20px;
+  margin-top: 0px;
+}
+.textBox h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+.textBox p {
+  padding: 20px
+}
+
+.singleImg {
+  margin: 0px;
+  padding: 0px;
+  object-fit: scale-down;
+}
+
+.single-card-descript {
+  height: 400px;
   min-width: 250px;
+  padding: 10px;
   margin-right: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: black;
   color: white;
-  line-height: 0.5;
   margin-bottom: 5px;
 }
 

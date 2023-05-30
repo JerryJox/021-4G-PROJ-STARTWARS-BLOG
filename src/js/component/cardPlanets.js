@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // import {faHeart} from ""
 // aqui estoy declarando el componente
 
-export const PlanetsCard = (props) => { //aquí recibo las propiedades a través del objeto .props
+export const CardPlanets = (props) => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
   console.log(props.planet)
