@@ -1,13 +1,14 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Context } from "../store/appContext";
-// import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export const SingleChaCard = () => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
+    const params = useParams();
     
     useEffect(()=>{ 
-        actions.fetchInfoPersonaje() //useParams
+        actions.fetchInfoPersonaje(params.theid) //useParams
         },[])
     
         console.log(store.infoPersonaje?.name)
@@ -15,8 +16,7 @@ export const SingleChaCard = () => { //aquí recibo las propiedades a través de
         return(
         <div className="bodySimpleCard row">
             <div className="col-md-auto imgBox">
-                <img className="card-img-top singleImg" src={"https://starwars-visualguide.com/assets/img/characters/1.jpg"} style={{ height: "100%"}}/>
-                {/* "+props.uid+" */}
+                <img className="card-img-top singleImg" src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} style={{ height: "100%"}}/>
             </div>
             <div className="col-md textBox">
                 <div className="card single-card-descript">
@@ -32,12 +32,12 @@ export const SingleChaCard = () => { //aquí recibo las propiedades a través de
                 </div>
             </div>
             <p>{store.infoPersonaje?.name}</p>
-            {/* <div>
-                // <div>
-                //     <p className="card-text">Name:</p>
-                //     <p>{props.character.name}</p>
-                // </div>
+            <div>
                 <div>
+                    <p className="card-text">Name:</p>
+                    <p>{params.theid.name}</p>
+                </div>
+                {/* <div>
                     <p className="card-text">Birth Year</p>
                     <p>{props.character.birth_year}</p>
                 </div>
@@ -56,8 +56,8 @@ export const SingleChaCard = () => { //aquí recibo las propiedades a través de
                 <div>
                     <p className="card-text">Eye Color</p>
                     <p>{props.character.eye_color}</p>
-                </div>
-            </div> */}
+                </div> */}
+            </div> 
         </div>
     );
 };
