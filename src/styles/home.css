@@ -1,5 +1,5 @@
 .back {
- background-color: black;
+  background-color: black;
 }
 
 .body {
@@ -68,22 +68,23 @@
 
 .imgBox {
   margin-left: 40px;
-  background-color: black;  
+  background-color: black;
   border-radius: 20px;
   height: 400px;
 }
 
 .textBox {
-  margin: 20px;
+  text-align: center;
+  margin: 25px;
   margin-top: 0px;
 }
 .textBox h1 {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 .textBox p {
-  padding: 20px
+  padding: 20px;
 }
 
 .singleImg {
@@ -101,6 +102,24 @@
   background-color: black;
   color: white;
   margin-bottom: 5px;
+}
+
+.hrx {
+  height: 3px;
+  width: 900px;
+  margin: 20px;
+  margin-inline:auto;
+  background-color: black;
+}
+
+.featuresBar {
+  width: 915px;
+  margin: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 .footer {
