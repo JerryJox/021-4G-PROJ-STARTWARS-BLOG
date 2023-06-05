@@ -26,9 +26,7 @@ export const SingleChaCard = () => { //aquí recibo las propiedades a través de
                         alias, officia error voluptatem consequuntur tempora natus hic. Molestiae aut tempora, 
                         placeat id non, eius aspernatur et saepe neque labore recusandae ad itaque provident 
                         amet dicta, quaerat autem consectetur obcaecati officia asperiores? Porro, corporis 
-                        aliquid corrupti maxime dicta, debitis eius veritatis aspernatur est at a voluptatum 
-                        quae quisquam earum reprehenderit officiis hic suscipit aperiam asperiores eligendi 
-                        officia quod.</p>
+                        aliquid corrupti maxime dicta.</p>
                 </div>
             </div>
             <div className="hrx"></div>

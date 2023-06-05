@@ -4,15 +4,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: null,
 			planets: null,
 			starships: null,
-			infoPersonaje: null
+			infoPersonaje: null,
+			infoPlaneta: null,
+			infoNave: null
 		},
 		actions: {
-			fetchStarships: () =>{ 
-				fetch("https://www.swapi.tech/api/starships/")
-				.then(res => res.json())
-				.then(data => setStore({starships: data.results }))
-				.then(error => console.log(error));
-		},
+			
 			fetchCharacters: () =>{ 
 				fetch("https://swapi.dev/api/people/")
 				.then(res => res.json())
@@ -25,15 +22,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data => setStore({planets: data.results }))
 				.then(error => console.log(error));
 		},
-
-		fetchInfoPersonaje: (uid) =>{ 
-			fetch("https://swapi.dev/api/people/"+uid)
-			.then(res => res.json())
-			.then(data => setStore({infoPersonaje: data }))
-			// .then(data => console.log(data))
-			.then(error => console.log(error));
+			fetchStarships: () =>{ 
+				fetch("https://www.swapi.tech/api/starships/")
+				.then(res => res.json())
+				.then(data => setStore({starships: data.results }))
+				.then(error => console.log(error));
 		},
-
+			fetchInfoPersonaje: (uid) =>{ 
+				fetch("https://swapi.dev/api/people/"+uid)
+				.then(res => res.json())
+				.then(data => setStore({infoPersonaje: data }))
+				// .then(data => console.log(data))
+				.then(error => console.log(error));
+		},
+			fetchInfoPlaneta: (uid) =>{ 
+				fetch("https://swapi.dev/api/planets/"+uid)
+				.then(res => res.json())
+				.then(data => setStore({infoPlaneta: data }))
+				// .then(data => console.log(data))
+				.then(error => console.log(error));
+		},
+			fetchInfoNave: (uid) =>{ 
+				fetch("https://swapi.dev/api/starships/"+uid)
+				.then(res => res.json())
+				.then(data => setStore({infoNave: data }))
+				// .then(data => console.log(data))
+				.then(error => console.log(error));
+		},
 
 		}
 	}

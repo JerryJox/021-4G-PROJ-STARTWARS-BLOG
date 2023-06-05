@@ -37,8 +37,8 @@ export const Home = () => {
       <h1 className="h1">Planets</h1>
       <div className="d-flex flex-row flex-nowrap">
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
-          {store.planets?.map((planet) => (
-            <CardPlanets planet={planet} key={planet.uid} />
+          {store.planets?.map((planet,index) => (
+            <CardPlanets planet={planet} key={index} uid={planet+1}/>
           ))}
         </div>
       </div>
@@ -48,7 +48,7 @@ export const Home = () => {
           {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
           {store.starships?.map((starship,index) => (
-            <CardStarships starship={starship} key={starship.uid} />
+            <CardStarships starship={starship} key={index} uid={starship+1}/>
           ))}
         </div>
       </div>
@@ -71,3 +71,24 @@ export const Home = () => {
 // 		</a>
 // 	</div>
 // );
+
+
+
+
+{/* <div className="d-flex flex-row flex-nowrap">
+<div id="card-view" className="d-flex overflow-auto custom-scroll">
+  {store.planets?.map((planet) => (
+    <CardPlanets planet={planet} key={planet.uid} />
+  ))}
+</div>
+</div>
+<h1 className="h1">Starships</h1>
+<div className="d-flex flex-row flex-nowrap">
+<div id="card-view" className="d-flex overflow-auto custom-scroll">
+  // {/* aquí corresponde el mapeado de store.character para
+  //     que me dibuje una card cada vez que itere 
+  {store.starships?.map((starship) => (
+    <CardStarships starship={starship} key={starship.uid} />
+  ))}
+</div>
+</div> */}

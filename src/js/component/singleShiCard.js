@@ -1,25 +1,58 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export const SingleShiCard = (props) => { //aquí recibo las propiedades a través del objeto .props
+export const SingleShiCard = () => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
-//   console.log(props.starships)
-    return(
-        <div className="body">
-            <div className="card single-card-view">
-                <div>
-                    <h1>starships</h1>
-                    {/* <img className="card-img-top" src={"https://starwars-visualguide.com/assets/img/characters/"+props.character.uid+".jpg"}/>
-                    <div className="card-body">
-                        <h5 className="card-title">{props.character.name}</h5><br></br>
-                        <p className="card-text">Gender: {props.character.gender}</p>
-                        <p className="card-text">Hair color: {props.character.haircolor}</p>
-                        <p className="card-text">Eye-color: {props.character.eyecolor}</p>
-                    </div> */}
+    const params = useParams();
+    
+    useEffect(()=>{ 
+        actions.fetchInfoNave(params.theid) //useParams
+        },[])
+    
+        console.log(store.infoNave?.name)
+
+        return(
+        <div className="bodySimpleCard row">
+            <div className="col-md-auto imgBox">
+                <img className="card-img-top singleImg" src={`https://starwars-visualguide.com/assets/img/starships/${params.theid}.jpg`} style={{ height: "100%"}}/>
+            </div>
+            <div className="col-md textBox">
+                <div className="card single-card-descript">
+                    <h1 className="card-title">{store.infoNave?.name}</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus odio obcaecati
+                        blanditiis consectetur sed, amet veritatis incidunt quasi saepe deserunt dolorum 
+                        alias.</p>
                 </div>
             </div>
+            <div className="hrx"></div>
+            <div className="featuresBar">
+                <div>
+                    <p className="card-text">Model</p>
+                    <p>{store.infoPlaneta?.model}</p>
+                </div>
+                <div>
+                    <p className="card-text">Starship<br></br>class</p>
+                    <p>{store.infoPlaneta?.starship_class}</p>
+                </div>
+                <div>
+                    <p className="card-text">Manufacturer</p>
+                    <p>{store.infoPlaneta?.manufacturer}</p>
+                </div>
+                <div>
+                    <p className="card-text">Cost in<br></br>credits</p>
+                    <p>{store.infoPlaneta?.cost_in_credits}</p>
+                </div>
+                <div>
+                    <p className="card-text">Length</p>
+                    <p>{store.infoPlaneta?.length}</p>
+                </div>
+                <div>
+                    <p className="card-text">Crew</p>
+                    <p>{store.infoPlaneta?.crew}</p>
+                </div>
+            </div> 
         </div>
     );
 };

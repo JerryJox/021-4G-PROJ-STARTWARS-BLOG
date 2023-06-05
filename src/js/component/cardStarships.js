@@ -1,5 +1,3 @@
-// https://www.swapi.tech/api/starships/
-
 import React, {useState, useEffect, useContext} from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -9,7 +7,7 @@ import { Link } from "react-router-dom";
 export const CardStarships = (props) => { //aquí recibo las propiedades a través del objeto .props
     const {store,actions} = useContext(Context);
     const [result, setResult] = useState({});
-//   console.log(props.starship)
+  console.log(props.starship.crew)
     return(
         <div className="card card-view">
             <div>
@@ -27,3 +25,5 @@ export const CardStarships = (props) => { //aquí recibo las propiedades a trav�
         </div>
     );
 };
+
+// https://www.swapi.tech/api/starships/
