@@ -12,13 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     actions.fetchCharacters();
-  }, []);
-
-  useEffect(() => {
     actions.fetchPlanets();
-  }, []);
-
-  useEffect(() => {
     actions.fetchStarships();
   }, []);
 
@@ -29,16 +23,16 @@ export const Home = () => {
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
           {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
-          {store.characters?.map((character,index) => (
-            <CardCharacters character={character} key={index} uid={index+1}/>
+          {store.characters?.map((character, index) => (
+            <CardCharacters character={character} key={index} uid={index + 1} />
           ))}
         </div>
       </div>
       <h1 className="h1">Planets</h1>
       <div className="d-flex flex-row flex-nowrap">
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
-          {store.planets?.map((planet,index) => (
-            <CardPlanets planet={planet} key={index} uid={planet+1}/>
+          {store.planets?.map((planet, index) => (
+            <CardPlanets planet={planet} key={index} uid={index + 1} />
           ))}
         </div>
       </div>
@@ -47,8 +41,8 @@ export const Home = () => {
         <div id="card-view" className="d-flex overflow-auto custom-scroll">
           {/* aquí corresponde el mapeado de store.character para
 							que me dibuje una card cada vez que itere */}
-          {store.starships?.map((starship,index) => (
-            <CardStarships starship={starship} key={index} uid={starship+1}/>
+          {store.starships?.map((starship, index) => (
+            <CardStarships starship={starship} key={index} uid={index + 1} />
           ))}
         </div>
       </div>
@@ -72,10 +66,8 @@ export const Home = () => {
 // 	</div>
 // );
 
-
-
-
-{/* <div className="d-flex flex-row flex-nowrap">
+{
+  /* <div className="d-flex flex-row flex-nowrap">
 <div id="card-view" className="d-flex overflow-auto custom-scroll">
   {store.planets?.map((planet) => (
     <CardPlanets planet={planet} key={planet.uid} />
@@ -91,4 +83,5 @@ export const Home = () => {
     <CardStarships starship={starship} key={starship.uid} />
   ))}
 </div>
-</div> */}
+</div> */
+}
