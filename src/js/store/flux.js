@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			starships: null,
 			infoPersonaje: null,
 			infoPlaneta: null,
-			infoNave: null
+			infoNave: null,
+			test: null
 		},
 		actions: {
 			
