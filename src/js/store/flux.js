@@ -37,6 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       fetchInfoPlaneta: (uid) => {
         fetch("https://swapi.dev/api/planets/" + uid + "/")
+          //  https://swapi.dev/api/planets/1/
           .then((res) => res.json())
           .then((data) => setStore({ infoPlaneta: data }))
           // .then(data => console.log(data))

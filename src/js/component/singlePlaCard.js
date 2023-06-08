@@ -20,6 +20,7 @@ export const SinglePlaCard = () => {
         <img
           className="card-img-top singleImg"
           src={`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}
+          alt="https://starwars-visualguide.com/assets/img/placeholder.jpg"
           style={{ height: "100%" }}
         />
       </div>
