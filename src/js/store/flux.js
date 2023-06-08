@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((error) => console.log(error));
       },
       fetchInfoPlaneta: (uid) => {
-        fetch("https://swapi.dev/api/planets/" + uid)
+        fetch("https://swapi.dev/api/planets/" + uid + "/")
           .then((res) => res.json())
           .then((data) => setStore({ infoPlaneta: data }))
           // .then(data => console.log(data))
@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch("https://swapi.dev/api/starships/" + uid + "/")
           .then((res) => res.json())
           .then((data) => setStore({ infoNave: data }))
-          //   .then((data) => console.log(data))
+          // .then((data) => console.log(data))
           .then((error) => console.log(error));
       },
     },

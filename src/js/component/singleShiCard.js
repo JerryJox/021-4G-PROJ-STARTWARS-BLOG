@@ -20,6 +20,7 @@ export const SingleShiCard = () => {
         <img
           className="card-img-top singleImg"
           src={`https://starwars-visualguide.com/assets/img/starships/${params.theid}.jpg`}
+          alt="https://starwars-visualguide.com/assets/img/placeholder.jpg"
           style={{ height: "100%" }}
         />
       </div>
